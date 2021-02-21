@@ -8,9 +8,20 @@
       <div class="sun">
       </div>
       <div class="orbitA" style="transform:rotate({{rotatecss}});">
-          <div class="planetA">
-          </div>
+        <div class="planetA">
+        </div>
       </div>
+      <div class="orbitB" style="transform:rotate({{rotatecss}});">
+        <div class="planetB">
+      </div>
+      <!--<div class="orbitC" style="transform:rotate({{rotatecss}});">
+        <div class="planetC">
+      </div>-->
+      <!--<planet (rotation)="rotatecss"></planet>-->
+
+
+
+    </div>
   </div>
   <div class="slidecontainer">
     <input [(ngModel)]="sliderValue" (change)="getSliderValue()" type="range" min="0" max="360" value="{{sliderValue}}" class="slider" id="myRange">

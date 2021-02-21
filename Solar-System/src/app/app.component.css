@@ -44,6 +44,24 @@ header{
     background:red;
     border-radius:50%;
 }
+.planetB{
+  position:absolute;
+  top:0;
+  left:0;
+  width:10px;
+  height:10px;
+  background:blue;
+  border-radius:50%;
+}
+.planetC{
+  position:absolute;
+  top:0;
+  left:0;
+  width:15px;
+  height:15px;
+  background:blueviolet;
+  border-radius:50%;
+}
 .dot2{
     position:absolute;
     top:0;
@@ -68,6 +86,38 @@ header{
     -moz-animation-timing-function:linear;
     -moz-animation-name:orbit;
     -moz-animation-duration:20s;*/
+}
+.orbitB{
+  margin: auto;
+  position: relative;
+  top: -50px;
+  width:100px;
+  height:100px;
+  /*transform: rotate(50deg);*/
+  /*-webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-name:orbit;
+  -webkit-animation-duration:20s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+  -moz-animation-name:orbit;
+  -moz-animation-duration:20s;*/
+}
+.orbitC{
+  margin: auto;
+  position: absolute;
+  top: -50px;
+  width:200px;
+  height:200px;
+  /*transform: rotate(50deg);*/
+  /*-webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-name:orbit;
+  -webkit-animation-duration:20s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+  -moz-animation-name:orbit;
+  -moz-animation-duration:20s;*/
 }
 @-webkit-keyframes orbit { 
 from { -webkit-transform:rotate(0deg) }

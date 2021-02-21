@@ -1,0 +1,32 @@
+.sun{
+    position: absolute;
+    margin:auto;
+    top: 100px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: orange;
+      top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+.planetA{
+    position:absolute;
+    top:0;
+    left:0;
+    width:10px;
+    height:10px;
+    background:red;
+    border-radius:50%;
+}
+.dot2{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100px;
+    height:100px;
+    background:red;
+    border-radius:50%;
+}

@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnimationdemoComponent } from './animationdemo/animationdemo.component';
+import { PlanetComponent } from './planet/planet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnimationdemoComponent
+    AnimationdemoComponent,
+    PlanetComponent
   ],
   imports: [
     BrowserModule,
