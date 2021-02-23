@@ -1,0 +1,11 @@
+header{
+    background-color:#0F1020;
+    min-height: 80px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+h1{
+    color: white;
+    white-space: nowrap;
+}

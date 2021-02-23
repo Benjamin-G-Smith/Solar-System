@@ -30,10 +30,6 @@ export class AppComponent implements OnInit{
     }
 
     this.ctx = this.canvas.nativeElement.getContext('2d') as unknown as CanvasRenderingContext2D;
-    var c = this.ctx;
-    c.fillStyle = 'rgba(255, 0,0,0.5)';
-    c.arc(400,200,30,0, Math.PI * 2, false);
-    c.stroke();
 
   }
 
@@ -51,9 +47,10 @@ export class AppComponent implements OnInit{
 
   animate(): void{
     this.ctx.fillStyle = 'blue';    
-    this.ctx.strokeStyle = "yellow";
+    this.ctx.strokeStyle = "white";
+    this.ctx.lineWidth = 2;
     const circle = new Cirlce(this.ctx);
-    circle.draw(600.5,300,this.sliderValue);
+    circle.draw(250.5,250,this.sliderValue);
   }
   getSliderValue(){
     console.log(this.sliderValue);

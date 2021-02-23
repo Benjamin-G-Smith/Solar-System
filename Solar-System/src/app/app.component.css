@@ -1,11 +1,9 @@
-header{
-    background-color: rgb(184, 184, 184);
-    height: 40px;
-    padding: 10px;
-
+*{
+  font-family: 'Roboto Mono', monospace;
 }
+
 .fullscreen{
-    width: 100vw;
+    width: 90vw;
     height: 90vh;
 }
 .containter{
@@ -16,7 +14,6 @@ header{
 .system-container{
     height: 400px;
     width: 700px;
-    background-color: black;
     margin: auto;
     padding: 10px;
     position: relative;
@@ -131,14 +128,16 @@ to { -moz-transform:rotate(360deg) }
 
 
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
+  margin:auto;
+  position:relative;
+  width: 60%; /* Width of the outside container */
 }
 
 /* The slider itself */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 100%; /* Full-width */
+  width: 90%; /* Full-width */
   height: 25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
@@ -170,6 +169,7 @@ to { -moz-transform:rotate(360deg) }
 }
 
 canvas{
-  border: 1px solid black;
+  width: 400px;
+  height: 400px;
 
 }

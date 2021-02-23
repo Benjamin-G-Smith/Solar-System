@@ -1,3 +1,5 @@
+
+
 header{
     background-color: rgb(184, 184, 184);
     height: 40px;
@@ -6,7 +8,10 @@ header{
 }
 .fullscreen{
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
+    min-width: 600px;
+    background: rgb(2,0,36);
+    background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(52,9,121,1) 49%, rgba(0,212,255,0.5186449579831933) 100%);
 }
 .containter{
     margin:10px;
