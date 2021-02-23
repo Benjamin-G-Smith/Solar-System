@@ -2,8 +2,9 @@
 <header>
   <span>Home</span>
 </header>
-<div class="containter">
   <h1>Solar-System 101</h1>
+<div #parent class="containter" style="height: 400px;width: 800px;position: relative;background-color: blueviolet;">
+
   <canvas #canvas></canvas>
   <button (click)="animate()">PLAY</button>
 <!--
@@ -20,8 +21,10 @@
     </div>
   </div>
 -->
-  <div class="slidecontainer">
-    <input [(ngModel)]="sliderValue" (change)="getSliderValue()" type="range" min="0" max="360" value="{{sliderValue}}" class="slider" id="myRange">
-  </div>
+
 </div>
+  <div class="slidecontainer">
+    <input [(ngModel)]="sliderValue" (change)="getSliderValue()" type="range" min="0" max="360" value="{{sliderValue}}"
+      class="slider" id="myRange">
+  </div>
 <router-outlet></router-outlet>

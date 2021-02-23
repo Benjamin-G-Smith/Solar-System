@@ -18,36 +18,42 @@ export class AppComponent implements OnInit{
   @ViewChild('canvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
   ctx!: CanvasRenderingContext2D;
+  dpi: any;
 
-  constructor(){
-
-  }
+  constructor(){  }
   
   ngOnInit(): void {
+    this.dpi = window.devicePixelRatio;
     var canvas = document.querySelector('canvas');
     if(canvas != undefined){
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerWidth;
+      this.fitToContainer(canvas);
     }
-
-
 
     this.ctx = this.canvas.nativeElement.getContext('2d') as unknown as CanvasRenderingContext2D;
     var c = this.ctx;
-    
-    c.beginPath();
-    c.moveTo(0,0);
-    c.lineTo(200,100);
-    c.lineTo(400,400);
+    c.fillStyle = 'rgba(255, 0,0,0.5)';
+    c.arc(400,200,30,0, Math.PI * 2, false);
     c.stroke();
-
 
   }
 
+
+ fitToContainer(canvas: HTMLCanvasElement) {
+    if(canvas){
+      // Make it visually fill the positioned parent
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      // ...then set the internal size to match
+      canvas.width = canvas.offsetWidth * this.dpi;
+      canvas.height = canvas.offsetHeight * this.dpi;
+    }
+  }
+
   animate(): void{
-    this.ctx.fillStyle = 'red';
-    const square = new Square(this.ctx);
-    square.draw(5, 1, 20);
+    this.ctx.fillStyle = 'blue';    
+    this.ctx.strokeStyle = "yellow";
+    const circle = new Cirlce(this.ctx);
+    circle.draw(600.5,300,this.sliderValue);
   }
   getSliderValue(){
     console.log(this.sliderValue);
@@ -61,8 +67,15 @@ export class AppComponent implements OnInit{
 
 export class Square {
   constructor(private ctx: CanvasRenderingContext2D) {}
-
   draw(x: number, y: number, z: number) {
     this.ctx.fillRect(z * x, z * y, z, z);
+  }
+}
+export class Cirlce {
+  constructor(private ctx: CanvasRenderingContext2D) {}
+  draw(x: number, y: number, z: number){
+    this.ctx.beginPath();
+    this.ctx.arc(x, y, z, 0, Math.PI * 2, false);
+    this.ctx.stroke();
   }
 }
