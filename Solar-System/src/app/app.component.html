@@ -4,6 +4,9 @@
 </header>
 <div class="containter">
   <h1>Solar-System 101</h1>
+  <canvas #canvas></canvas>
+  <button (click)="animate()">PLAY</button>
+<!--
   <div class="system-container">
       <div class="sun">
       </div>
@@ -14,15 +17,9 @@
       <div class="orbitB" style="transform:rotate({{rotatecss}});">
         <div class="planetB">
       </div>
-      <!--<div class="orbitC" style="transform:rotate({{rotatecss}});">
-        <div class="planetC">
-      </div>-->
-      <!--<planet (rotation)="rotatecss"></planet>-->
-
-
-
     </div>
   </div>
+-->
   <div class="slidecontainer">
     <input [(ngModel)]="sliderValue" (change)="getSliderValue()" type="range" min="0" max="360" value="{{sliderValue}}" class="slider" id="myRange">
   </div>
