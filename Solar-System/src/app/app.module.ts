@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { AnimationdemoComponent } from './animationdemo/animationdemo.component';
 import { PlanetComponent } from './planet/planet.component';
 import { BannerComponent } from './banner/banner.component';
+import { StarFieldComponent } from './star-field/star-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimationdemoComponent,
     PlanetComponent,
-    BannerComponent
+    BannerComponent,
+    StarFieldComponent
   ],
   imports: [
     BrowserModule,
