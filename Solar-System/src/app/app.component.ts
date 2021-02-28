@@ -15,6 +15,13 @@ export class AppComponent implements OnInit{
   sliderValue = 50;
   rotatecss = "";
 
+  system = [
+        {"size": 20,"name":"A"},
+        {"size": 80,"name":"B"},
+        {"size": 100,"name":"C"},
+        {"size": 220,"name":"D"},
+    ];
+
   @ViewChild('canvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
   ctx!: CanvasRenderingContext2D;
@@ -28,8 +35,7 @@ export class AppComponent implements OnInit{
     if(canvas != undefined){
       this.fitToContainer(canvas);
     }
-
-    this.ctx = this.canvas.nativeElement.getContext('2d') as unknown as CanvasRenderingContext2D;
+    this.drawPlanets(this.system);
 
   }
 
@@ -45,6 +51,21 @@ export class AppComponent implements OnInit{
     }
   }
 
+  drawPlanets(planets: any){
+    this.ctx = this.canvas.nativeElement.getContext('2d') as unknown as CanvasRenderingContext2D;
+    this.ctx.fillStyle = 'blue';    
+    this.ctx.strokeStyle = "white";
+    this.ctx.lineWidth = 2;
+    const circle = new Cirlce(this.ctx);
+    this.system.forEach((planet: { size: number; }) =>{
+      circle.draw(250.5,250, planet.size)
+
+    });
+  }
+
+  toRadians = function(degrees: any) {
+    return degrees * Math.PI / 180;
+  }
   animate(): void{
     this.ctx.fillStyle = 'blue';    
     this.ctx.strokeStyle = "white";
@@ -74,5 +95,29 @@ export class Cirlce {
     this.ctx.beginPath();
     this.ctx.arc(x, y, z, 0, Math.PI * 2, false);
     this.ctx.stroke();
+    this.ctx.beginPath();
+    this.ctx.fillStyle = "red";
+    //this.ctx.arc(x-z,y, 10, 0, Math.PI * 2, false);
+    console.log(x,y);
+    //this.ctx.fill();
+
+    //var sub_angle=((x-z)/10)*this.toRadians(20);
+    //var sub_angle=this.toRadians(20);
+    var sub_angle=this.toRadians(z);
+    console.log(sub_angle);
+    var fx = Math.cos(sub_angle);
+    var fy = Math.sin(sub_angle);
+    var lx = -Math.sin(sub_angle);
+    var ly = Math.cos(sub_angle);
+
+    var xi=x+(x-z)*(Math.sin(sub_angle)*fx+ (1-Math.cos(sub_angle))*(-lx));
+    var yi=y+(x-z)*(Math.sin(sub_angle)*fy + (1-Math.cos(sub_angle))*(-ly));
+    console.log(xi, yi);
+    this.ctx.arc(xi,yi, 10, 0, Math.PI * 2, false);
+    this.ctx.fill();
   }
+  toRadians = function(degrees: any) {
+    return degrees * Math.PI / 180;
+  }
+
 }
