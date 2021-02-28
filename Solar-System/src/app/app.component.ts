@@ -97,9 +97,19 @@ export class Cirlce {
     this.ctx.stroke();
     this.ctx.beginPath();
     this.ctx.fillStyle = "red";
-    //this.ctx.arc(x-z,y, 10, 0, Math.PI * 2, false);
+    this.ctx.arc(x-z,y, 10, 0, Math.PI * 2, false);
     console.log(x,y);
-    //this.ctx.fill();
+    this.ctx.fill();
+    this.ctx.beginPath();
+    this.ctx.arc(x,y-z, 10, 0, Math.PI * 2, false);
+    this.ctx.fill();
+    this.ctx.beginPath();
+    this.ctx.arc(x,y+z, 10, 0, Math.PI * 2, false);
+    this.ctx.fill();
+    this.ctx.beginPath();
+    this.ctx.arc(x+z,y, 10, 0, Math.PI * 2, false);
+    this.ctx.fill();
+
 
     //var sub_angle=((x-z)/10)*this.toRadians(20);
     //var sub_angle=this.toRadians(20);
@@ -113,8 +123,8 @@ export class Cirlce {
     var xi=x+(x-z)*(Math.sin(sub_angle)*fx+ (1-Math.cos(sub_angle))*(-lx));
     var yi=y+(x-z)*(Math.sin(sub_angle)*fy + (1-Math.cos(sub_angle))*(-ly));
     console.log(xi, yi);
-    this.ctx.arc(xi,yi, 10, 0, Math.PI * 2, false);
-    this.ctx.fill();
+    //this.ctx.arc(xi,yi, 10, 0, Math.PI * 2, false);
+    //this.ctx.fill();
   }
   toRadians = function(degrees: any) {
     return degrees * Math.PI / 180;
